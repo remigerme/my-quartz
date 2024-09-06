@@ -1,0 +1,19 @@
+networks:
+  web:
+    external: true
+
+services:
+  quartz:
+    build: .
+    volumes:
+      - "${PATH_TO_CONTENT}:/usr/src/app/content"
+    networks:
+      - web
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.quartz.rule=Host(`blog.remigerme.xyz`)
+      # https configuration
+      - traefik.http.routers.quartz.tls=true
+      - traefik.http.routers.quartz.tls.certresolver=myresolver
+      # Connect the reverse proxy to the container port 80
+      - traefik.http.services.quartz.loadbalancer.server.port=80
