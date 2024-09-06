@@ -5,6 +5,8 @@ networks:
 services:
   quartz:
     build: .
+    container_name: quartz
+    restart: unless-stopped
     volumes:
       - "${PATH_TO_CONTENT}:/usr/src/app/content"
     networks:
@@ -15,5 +17,5 @@ services:
       # https configuration
       - traefik.http.routers.quartz.tls=true
       - traefik.http.routers.quartz.tls.certresolver=myresolver
-      # Connect the reverse proxy to the container port 80
-      - traefik.http.services.quartz.loadbalancer.server.port=80
+      # Connect the reverse proxy to the container port 8080
+      - traefik.http.services.quartz.loadbalancer.server.port=8080
