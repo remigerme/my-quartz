@@ -1,4 +1,4 @@
-import { formatDate, getDate } from "./Date"
+import { formatDate, getDate, getTill } from "./Date"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import readingTime from "reading-time"
 import { classNames } from "../util/lang"
@@ -31,6 +31,10 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
       if (fileData.dates) {
         segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
+      }
+
+      if (fileData.frontmatter.till) {
+        segments.push(formatDate(getTill(fileData)!, cfg.locale))
       }
 
       // Display reading time if enabled
