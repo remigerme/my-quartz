@@ -19,10 +19,10 @@ export function getDate(cfg: GlobalConfiguration, data: QuartzPluginData): Date 
 }
 
 export function getTill(data: QuartzPluginData): Date | undefined {
-  if (data.frontmatter.till === undefined) {
+  if (typeof data.frontmatter.till === undefined) {
     return undefined
   }
-  return Date(data.frontmatter.till)
+  return new globalThis.Date(data.frontmatter.till)
 }
 
 export function formatDate(d: Date, locale: ValidLocale = "en-US"): string {
