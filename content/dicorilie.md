@@ -13,15 +13,17 @@ Qui sert encore plus à Sofia visiblement.
 |         dw         |                don't worry                |
 |        ftfy        |            fixed that for you             |
 |        fwiw        |            for what it's worth            |
+|         gl         |                 good luck                 |
+|         gn         |                good night                 |
 |         hf         |                 have fun                  |
 |       id(f)c       |          I don't (fucking) care           |
 |       idgaf        |            I don't give a fuck            |
 |    idk / dunno     |               I don't know                |
+|        iirc        |      if I recall/remember correctly       |
 |        ikr         |               I know right                |
 |        ilv         |                I love you                 |
 |       im(h)o       |          in my (humble) opinion           |
-|         gl         |                 good luck                 |
-|         gn         |                good night                 |
+|        lts         |             long-term support             |
 |        ngl         |               not gonna lie               |
 |        mia         |             missing in action             |
 |         np         |                no problem                 |
