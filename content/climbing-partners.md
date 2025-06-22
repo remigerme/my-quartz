@@ -20,6 +20,20 @@ And also for hiking partners to :
 - do small hikes near Berkeley (during week days / week ends)
 - do longer hikes / small backpacking trips farther away (week ends / small vacation)
 
+My US climbs so far:
+- Mount Tamalpais
+- Mount Diablo state park
+- Yosemite
+- The Grotto
+- Yosemite
+- Mickey's beach
+
+My bucket list:
+- Tuolomne (Cathedral Peak + others)
+- Lake Tahoe
+- Bishop?
+- any other cool place 
+
 My schedule :
 
 | Week days                                                                                   | Week end   | Vacation                                                                      |
@@ -32,16 +46,22 @@ Ranked by favorite - climbing disciplines :
 
 - **ridge route** (like \[\[soreiller|Aiguille Dibona\]\], \[\[gerbier|Arêtes du Gerbier\]\] - this one I still haven't uploaded yet even though [the place is absolutely amazing](https://www.google.com/search?client=firefox-b-1-d&sca_esv=6394b484165850ad&sxsrf=AHTn8zrlv8AlrNyDC9S8yIkDsNlTEobEdQ:1746234837494&q=ar%C3%AAte+du+gerbier&udm=2&fbs=ABzOT_BnMAgCWdhr5zilP5f1cnRvJ3SHQcDVxkdpDyHwlRhdNfno-ClRh0PKqyvFYyTkfIeCoWIR5C1jUN_wgcDJ8Cdwgf887lFxRCsZbfrfzJNeHosjoeiqK0hvKnj5ldcLCntQQleVWcMtW7U2QcD0PkxBNE0XJq8dCcL1X5sASbMJsxxi-PD7moK0VsZ5JjEKIDoymmqQrk3W-PnfsKOaH9H7QxJI3DZHouuPsdAFG3lBdd8pXyg&sa=X&ved=2ahUKEwjZwbvZj4aNAxVJJzQIHbalCEEQtKgLegQIFhAB&biw=1920&bih=968&dpr=2), \[\[petite-lance|Petite lance de Domène\]\] or \[\[pin|Aiguille du pin\]\])
 - **multi-pitch** (like any trip in the Calanques \[\[calanques-1|1\]\] \[\[calanques-2|2\]\] \[\[calanques-3|3\]\] \[\[calanques-4|4\]\], in Ailefroide \[\[ailefroide-2023|1\]\] \[\[ailefroide-2023-2|2\]\] \[\[ailefroide-2024|3\]\] \[\[ailefroide|4\]\] or in the Esterel \[\[esterel|1\]\] \[\[esterel-2|2\]\] \[\[esterel-3|3\]\])
-- **trad climbing** (in fact, many routes in the trips mentioned above were trad climbing, but I like trad climbing even if it's one pitch long and easy)
+- **trad climbing** [^1] (in fact, many routes in the trips mentioned above were trad climbing, but I like trad climbing even if it's one pitch long and easy)
 - **sport climbing** (most places mentioned above also includes sport climbing)
 - **bouldering** - hem. I'm not a boulderer, but why not if it is really necessary :)
 
-Some information about the grades I climbed (note that this a rough estimation for now, I'll be able to be more accurate as my US sample of climbs grows): 
+On **crack climbing**: I discovered that when arriving in the US. I'm still very bad but I tend to get the feeling (*i.e.* I decently survive if the crack is _the good size_ (not too thin, not too wide)).
 
-| Discipline       | Indoor | Outdoor | Trad  | Crack climbing |
-| ---------------- | ------ | ------- | ----- | -------------- |
-| **Grade (lead)** | 5\.11d | 5\.10d  | 5.8/9 | not yet :')    |
+Some information about the grades I climbed: 
+
+| Discipline       | Indoor | Outdoor | Trad [^1] | Crack climbing |
+| ---------------- | ------ | ------- | --------- | -------------- |
+| **Grade (lead)** | 5\.11d | 5\.11   | 5.8/9     | 5.9            |
 
 Note that **I don't have a car**, but I do have gear (50m rope, stoppers and cams, slings, ...). Also, I do have camping/backpacking gear (tent, camp stove, ...).
 
 You might want to take a look at my \[\[montagne/index| climbing blog\]\].
+
+[^1]: Trad in Europe is really different from in the US. We don't have cracks, so trad climbing is waaaaaaay less frequent (most climbers do not have cams because why the hell do you need them?[^2]). Basically, you place gear when you _can_ and not when you _want_ (because cracks make it so easy to place gear anytime you want).
+
+[^2]: Well, I need cams because I mountaineer and do trad climbing (which still exists, even though it is not that popular).
