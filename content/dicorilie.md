@@ -23,12 +23,16 @@ Qui sert encore plus à Sofia visiblement.
 |        ikr         |               I know right                |
 |        ilv         |                I love you                 |
 |       im(h)o       |          in my (humble) opinion           |
+|        istg        |              I swear to god               |
+|        lmao        |            laughing my ass off            |
+|        lol         |             laughing out loud             |
 |        lts         |             long-term support             |
 |        ngl         |               not gonna lie               |
 |        mia         |             missing in action             |
 |         np         |                no problem                 |
 |        nvm         |                 nevermind                 |
 |        ofc         |                 of course                 |
+|        omg         |                 oh my god                 |
 |        omw         |                 on my way                 |
 |        otoh        |             on the other hand             |
 |       pebcak       | problem exists between chair and keyboard |
