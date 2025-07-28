@@ -26,4 +26,5 @@ Puis un 5.10b en *sport climbing* (ie équipé !), plus classique, ce qui rassur
 Une équipe que je ne connaissais pas encore mais que je ne tarderais pas à revoir.
 
 ![[montagne/berkeley-2025/mt-diablo/0.jpg]]
+
 Le caillou est très sableux : c'est de la *sandstone*. C'est littéralement faisable de broyer les prises de main.
