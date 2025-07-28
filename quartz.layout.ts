@@ -1,5 +1,34 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { FileTrieNode } from "./quartz/util/fileTrie"
+
+// Sort by date (newest first), then alphabetically for items without dates.
+let explorerSortFn = (a: FileTrieNode, b: FileTrieNode) => {
+  // Get dates for both nodes
+  const dateA = a.data?.date
+  const dateB = b.data?.date
+
+  if (dateA && dateB) {
+    // Both have dates, sort by date (newest first)
+    const parsedDateA = typeof dateA === 'string' ? new Date(dateA) : dateA
+    const parsedDateB = typeof dateB === 'string' ? new Date(dateB) : dateB
+    return parsedDateB.getTime() - parsedDateA.getTime()
+  }
+
+  if (dateA && !dateB) {
+    return -1  // Items with dates come first
+  }
+
+  if (!dateA && dateB) {
+    return 1   // Items with dates come first
+  }
+
+  // Neither has a date, sort alphabetically
+  return a.displayName.localeCompare(b.displayName, undefined, {
+    numeric: true,
+    sensitivity: "base",
+  })
+}
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -50,7 +79,10 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      title: "Posts",
+      sortFn: explorerSortFn,
+    }),
   ],
   right: [
     // Component.Graph(),
@@ -74,7 +106,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({ title: "Posts", sortFn: explorerSortFn }),
   ],
   right: [],
 }

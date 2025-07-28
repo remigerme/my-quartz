@@ -176,6 +176,26 @@ async function setupExplorer(currentSlug: FullSlug) {
     const entries = [...Object.entries(data)] as [FullSlug, ContentDetails][]
     const trie = FileTrieNode.fromEntries(entries)
 
+    // Associate folder dates from their index files
+    function assignFolderDates(node: FileTrieNode) {
+      if (node.isFolder && !node.data) {
+        // Look for an index file in this folder
+        const indexSlug = (node.slug + "/index") as FullSlug
+        const indexData = data[indexSlug]
+        if (indexData) {
+          // Create a copy of the index data for the folder
+          node.data = { ...indexData } as any
+        }
+      }
+
+      // Recurse through children
+      for (const child of node.children) {
+        assignFolderDates(child)
+      }
+    }
+
+    assignFolderDates(trie)
+
     // Apply functions in order
     for (const fn of opts.order) {
       switch (fn) {
