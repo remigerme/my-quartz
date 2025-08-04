@@ -31,7 +31,9 @@ Let's take a real example with the And Inverter Graph (AIG) data structure.
 
 # Real-world use case of tagged pointers : AIG
 
-This example is from source code of the [ABC](https://github.com/berkeley-abc/abc) project.
+This example is taken from the source code of the [ABC](https://github.com/berkeley-abc/abc) project, a software performing various operations to design chips.
+
+The source code presented in this section is [available on github](https://gist.github.com/remigerme/18bb9e783a0eb688d464e4b008ce80f4).
 
 ## And Inverter Graphs (AIGs)
 
