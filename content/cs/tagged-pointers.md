@@ -12,7 +12,7 @@ Let's talk about _tagged pointers_.
 
 Tagged pointers are using memory alignment to store additional information.
 
-If on a given architecture `int` is 4 bytes, then `int` values have to be 4-byte aligned. As the addresses of these values must be a multiple of 4, pointers to such values must necessarily have their two least significant bits set to 0 (if those bits were not 0, the address wouldn't be a multiple of 4).
+If on a given architecture `int` is 4 bytes, then `int` values have to be 4-byte aligned (_edit: [[tagged-pointers#Edit on alignment|this assumption is false in general]]_). As the addresses of these values must be a multiple of 4, pointers to such values must necessarily have their two least significant bits set to 0 (if those bits were not 0, the address wouldn't be a multiple of 4).
 
 ```c
 // assuming sizeof(int) = 4 on the current architecture
@@ -207,6 +207,88 @@ This way, the integrity of the AIG is statically guaranteed!
 
 _(This is a lie, because the integrity of the AIG is more than just some requirements about individual nodes. An AIG must not contain any cycle, which is a property we must check at the AIG scale and not only at each node separately. But there are still less things that could go wrong.)_
 
+---
+
+# Edit on alignment
+
+> [!quote] Assumption made earlier
+> If on a given architecture `int` is 4 bytes, then `int` values have to be 4-byte aligned.
+
+As pointed out by commenters on [reddit](https://www.reddit.com/r/C_Programming/comments/1mh5ree/tagged_pointers_in_action/) (thanks for pointing out my mistake!), this assumption is false in general. In order to obtain guarantees on alignment, we have two strategies:
+
+- using `__attribute__((aligned(...)))` from GCC extensions[^5]
+- using `alignas(...)` starting from C11[^4].
+
+**Using variable attribute from GCC.**  
+We can simply define an alias to an aligned int, and use this alias in the rest of the codebase.
+
+```c
+typedef __attribute__((aligned(4))) int aligned4_int;
+```
+
+**Using `alignas` (>=C11).**  
+Unlike the previous solution, `alignas` cannot be applied to type definitions directly.
+
+```c
+#include <stdalign.h>
+
+typedef alignas(4) int aligned4_int;
+
+// will result in the following error
+tagged.c:15:9: error: '_Alignas' attribute only applies to variables and fields
+   15 | typedef alignas(4) int aligned4_int;
+```
+
+However, we can wrap an aligned `int` inside a struct (thus forcing the alignment of the struct).
+
+```c
+#include <stdalign.h>
+
+typedef struct {
+	alignas(4) int inner;
+} aligned_int;
+```
+
+This approach has the downside of adding one level of undirection, which might be quite painful in practice.
+
+**On weakening alignment.**  
+Note that `alignas` can only be used to provide a stricter alignment. Trying to provide a weaker alignment for an `int` will fail.
+
+```c
+typedef struct {
+	alignas(2) int inner;
+} aligned2_int;
+
+// will result in the following error
+tagged.c:12:5: error: requested alignment is less than minimum alignment of 4 for type 'int'
+   12 |     alignas(2) int inner;
+```
+
+On the other hand, `__attribute__((aligned(...)))` is less restrictive and allows us to provide weaker alignments. The following works fine:
+
+```c
+typedef __attribute__((aligned(2))) int aligned2_int;
+
+struct S {
+	char u;
+	char v;
+	aligned2_int x;
+	char y;
+	char z;
+};
+
+int main() {
+	assert(sizeof(struct S) == 8);
+	assert(__alignof__(struct S) == 2);
+	// Or even if using >=C11 and <stdalign.h>
+	assert(alignof(struct S) == 2);
+}
+```
+
+Leading to `struct S` being stored according to the memory layout below.
+
+![[struct_layout.png]]
+
 [^1]: Trees are undirected _connected_ acyclic graphs.
 
 [^2]: Some references :
@@ -216,3 +298,7 @@ _(This is a lie, because the integrity of the AIG is more than just some require
     - Mishchenko, A., Chatterjee, S., Brayton, R., & Een, N. (2006, November). Improvements to combinational equivalence checking. In _Proceedings of the 2006 IEEE/ACM international conference on Computer-aided design_ (pp. 836-843).
 
 [^3]: I mean it would work to have `NOT` gates as nodes in the AIG, but it will require potentially twice as nodes as if `NOT` gates are carried by edges.
+
+[^4]: See section 6.7.5 of the C11 standard for more information on `alignas`.
+
+[^5]: Learn more on the [manual page](https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html).
