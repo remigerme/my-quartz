@@ -3,6 +3,7 @@ title: Le dictionnaire de Marilie
 date: 2024-08-07
 description: Une feuille de triche d'abréviations anglaises.
 ---
+
 Qui sert encore plus à Sofia visiblement.
 
 |    Abreviation     |                  Meaning                  |
@@ -25,6 +26,7 @@ Qui sert encore plus à Sofia visiblement.
 |       im(h)o       |          in my (humble) opinion           |
 |        istg        |              I swear to god               |
 |        lmao        |            laughing my ass off            |
+|        lmk         |                let me know                |
 |        lol         |             laughing out loud             |
 |        lts         |             long-term support             |
 |        ngl         |               not gonna lie               |
@@ -44,6 +46,7 @@ Qui sert encore plus à Sofia visiblement.
 |         u          |                    you                    |
 |         y          |                    why                    |
 |        wdym        |             what do you mean              |
+|        wfh         |              work from home               |
 |        wrt         |              with respect to              |
 |        wtf         |               what the fuck               |
 |        wth         |               what the hell               |
