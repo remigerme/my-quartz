@@ -89,22 +89,22 @@ $$
 \end{align*}
 $$
 
-Hm, this $1 + \frac{1}{2} + ... + \frac{1}{n}$ term is quite annoying. Oh, but this is the famous [harmonic series](<https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)>)! It is well known that $1 + \frac{1}{2} + ... + \frac{1}{n} \simeq \log n + \gamma$ with $\gamma \simeq 0.577$ the Euler constant. Thus, we get the following result.
+Hm, this $1 + \frac{1}{2} + ... + \frac{1}{n}$ term is quite annoying. Oh, but this is the famous [harmonic series](<https://en.wikipedia.org/wiki/Harmonic_series_(mathematics)>)! It is well known that $1 + \frac{1}{2} + ... + \frac{1}{n} \simeq \ln n + \gamma$ with $\gamma \simeq 0.577$ the Euler constant. Thus, we get the following result.
 
 > [!info] Theorem
-> For a coupon collector problem with $n$ items, if $T$ denotes the waiting time before completing the whole collection, we have $\mathbb{E}(T) \simeq n(\log n + \gamma)$.
+> For a coupon collector problem with $n$ items, if $T$ denotes the waiting time before completing the whole collection, we have $\mathbb{E}(T) \simeq n(\ln n + \gamma)$.
 
-I ran some simulations of coupon collector problems (you can check the [source code](https://gist.github.com/remigerme/bd12e4a3a75ebf34cadfdd87815813db)), the graph below illustrates the experimental results. As you can see, we computed an excellent estimate.
+I ran some simulations of coupon collector problems (you can check the [source code](https://gist.github.com/remigerme/bd12e4a3a75ebf34cadfdd87815813db)), the graph below illustrates the experimental results (note that the blue curve is $n(\ln n + \gamma)$ as the default `log` is our beloved $\ln$). As you can see, we computed an excellent estimate.
 
 ![[coupon.png]]
 
 **Adapting the solution to Stardew.**  
-We consider a slightly different situation (yet completely equivalent). Each item has a uniform probability $p_i$, and we have $n_i$ items. Instead of having $p = 1, \frac{n-1}{n}, \frac{n-2}{n}, ..., \frac{1}{n}$, we now have $p = p_i n_i,\, p_i(n_i-1),\, p_i(n_i-2),\, ..., \, p_i$.
+We consider a slightly different situation (yet completely equivalent). Each item has a uniform probability $p_\text{item}$, and we have $n_\text{items}$ items. Instead of having $p = 1, \frac{n-1}{n}, \frac{n-2}{n}, ..., \frac{1}{n}$, we now have $p = p_\text{item} n_\text{items},\, p_\text{item}(n_\text{items}-1),\, p_\text{item}(n_\text{items}-2),\, ..., \, p_\text{item}$.
 
 $$
 \begin{align*}
-\text{Previously: } &\sum_{k=1}^i \frac{n}{k} \simeq n (\ln i + \gamma) \\
-\text{Now: } & \sum_{k=1}^{n_i} = \frac{1}{p_ik} \simeq \frac{1}{p_i}(\ln n_i + \gamma) \quad (\diamondsuit)
+\text{Previously: } &\sum_{i=1}^k \frac{n}{i} \simeq n (\ln k + \gamma) \\
+\text{Now: } & \sum_{i=1}^{n_\text{items}} = \frac{1}{p_\text{item} i} \simeq \frac{1}{p_\text{item}}(\ln n_\text{items} + \gamma) \quad (\diamondsuit)
 \end{align*}
 $$
 
