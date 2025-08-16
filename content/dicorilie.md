@@ -35,6 +35,7 @@ Qui sert encore plus à Sofia visiblement.
 |        nvm         |                 nevermind                 |
 |        ofc         |                 of course                 |
 |        omg         |                 oh my god                 |
+|        oml         |                oh my lord                 |
 |        omw         |                 on my way                 |
 |        otoh        |             on the other hand             |
 |       pebcak       | problem exists between chair and keyboard |
@@ -43,6 +44,7 @@ Qui sert encore plus à Sofia visiblement.
 |       (n)sfw       |            (not) safe for work            |
 |        stfu        |             shut the fuck up              |
 |        stfw        |          search the fuckin' web           |
+|        til         |              today I learned              |
 |         u          |                    you                    |
 |         y          |                    why                    |
 |        wdym        |             what do you mean              |
