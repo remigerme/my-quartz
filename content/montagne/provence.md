@@ -5,6 +5,9 @@ till: 2025-09-12
 with:
   - Léa
   - Isa
+tags:
+  - sud
+  - arête
 ---
 
 Faire Tours - Aix en train un jour de grève nationale en train ? Aucun problème, si ce n'est que la correspondance à Lyon Part-Dieu me faisait reprendre un train à Saint-Exupéry... bon, c'est pas grave, y en a d'autres des trains.
