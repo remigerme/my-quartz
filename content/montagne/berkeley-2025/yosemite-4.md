@@ -43,3 +43,8 @@ Honestly I don't even remember where is this place (probably around the start of
 
 Tuolomne meadows.
 ![[montagne/berkeley-2025/yosemite-4/9.jpg]]
+
+See also:
+- [[yosemite-1|Yosemite 1]]
+- [[yosemite-2|Yosemite 2]]
+- [[yosemite-3|Yosemite 3]]
