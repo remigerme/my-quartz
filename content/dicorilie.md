@@ -6,7 +6,7 @@ description: Une feuille de triche d'abréviations anglaises.
 
 Qui sert encore plus à Sofia visiblement.
 
-|    Abreviation     |                  Meaning                  |
+|    Abbreviation    |                  Meaning                  |
 | :----------------: | :---------------------------------------: |
 |        afk         |            away from keyboard             |
 | bradaframanadamada |        brother from another mother        |
@@ -45,6 +45,7 @@ Qui sert encore plus à Sofia visiblement.
 |        stfu        |             shut the fuck up              |
 |        stfw        |          search the fuckin' web           |
 |        til         |              today I learned              |
+|        tmi         |           too much information            |
 |         u          |                    you                    |
 |         y          |                    why                    |
 |        wdym        |             what do you mean              |
@@ -53,9 +54,3 @@ Qui sert encore plus à Sofia visiblement.
 |        wtf         |               what the fuck               |
 |        wth         |               what the hell               |
 |      wysiwyg       |       what you see is what you get        |
-
-Et c'est parti pour des abriévations françaises aussi.
-
-| Abréviation | Sens     |
-| ----------- | -------- |
-| alc         | à la clé |
