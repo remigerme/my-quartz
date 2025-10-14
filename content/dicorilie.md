@@ -12,6 +12,7 @@ Qui sert encore plus à Sofia visiblement.
 | bradaframanadamada |        brother from another mother        |
 |        btw         |                by the way                 |
 |         dw         |                don't worry                |
+|        fml         |     fuck my life (_vdm en français_)      |
 |        ftfy        |            fixed that for you             |
 |        fwiw        |            for what it's worth            |
 |         gl         |                 good luck                 |
