@@ -42,7 +42,11 @@ And Inverter Graphs (AIGs) are used to represent boolean circuits. They are grap
 With `AND` and `NOT` gates, we can recreate every combinational logic we want. For example:
 
 $$
-\mathtt{OR(x, y) = NOT(AND[NOT(x), NOT(y)])}
+#let OR = $mono("OR")$
+#let NOT = $mono("NOT")$
+#let AND = $mono("AND")$
+
+OR(x, y) = NOT(AND[NOT(x), NOT(y)])
 $$
 
 And the corresponding AIG will be (`x` and `y` are inputs, the unlabeled node is an `AND` gate, and black dots on edges represent a `NOT` gate):
