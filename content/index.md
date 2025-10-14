@@ -1,5 +1,5 @@
 ---
-title: Hello, world !
+title: Hello, world!
 description: Homepage of Raimmy's blog.
 ---
 
