@@ -12,90 +12,84 @@ The source code and the full report are available [on github](https://github.com
 
 > [!info] Linear combinators
 >
-> - $\mathbf{I}X \rhd X$
-> - $\mathbf{B}XYZ \rhd X(YZ)$
-> - $\mathbf{C}XYZ \rhd XZY$
+> - $bold(I) X triangle.stroked.r X$
+> - $bold(B) X Y Z triangle.stroked.r X(Y Z)$
+> - $bold(C) X Y Z triangle.stroked.r X Z Y$
 
 > [!info] Abstractions
 >
-> - $[x].x \equiv \mathbf{I}$
-> - $[x].UV = \mathbf{C}([x].U)V \quad \text{ if } x \in FV(U), x \notin FV(V)$
-> - $[x].UV = \mathbf{B}U([x].V) \quad \text{ if } x \notin FV(U), x \in FV(V)$
+> - $[x].x equiv bold(I) $
+> - $[x].U V = bold(C) ([x].U)V quad "if" x in "FV"(U), x in.not "FV"(V)$
+> - $[x].U V = bold(B) U([x].V) quad "if" x in.not "FV"(U), x in "FV"(V)$
 
 ## Deriving extensionality axioms
 
-> [!info] $\mathbf{I}$-axiom
+> [!info] $bold(I)$-axiom
 >
-> - ${\tiny \mathbf{B}(\mathbf{B}\mathbf{I})\mathbf{I} = \mathbf{I}} \quad \textit{i.e.} \quad [x].\mathbf{B}\mathbf{I}x = [x].x$
+> - $script( bold(B) (bold(B) bold(I) )bold(I)  = bold(I) ) quad \ italic(i.e.) quad [x].bold(B) bold(I) x = [x].x$
 
 How is the axiom derived?
 
-We consider $X = \mathbf{I}U$, and $Y = U$. Clearly, $X = Y$ extensionally. We want our extensional equality to satisfy rule $(\xi)$, that is, if $X = Y$ then $[v].X = [v].Y$. Let's write it down and see what needs to be true: that is the axiom we need to add to our theory.
+We consider $X = bold(I) U$, and $Y = U$. Clearly, $X = Y$ extensionally. We want our extensional equality to satisfy rule $(xi)$, that is, if $X = Y$ then $[v].X = [v].Y$. Let's write it down and see what needs to be true: that is the axiom we need to add to our theory.
 
 $$
-\begin{align*}
-[v].X &= [v].\mathbf{I}U \\
-&= \mathbf{B}\mathbf{I}([v].U) && \text{def of abstractions} \\
-&= ([x].\mathbf{B}\mathbf{I}x)([v].U) && \text{eval th} \\
-&= ([x].x)([v].U) && \textbf{I-axiom} \\
-&= [v].U = [v].Y && \text{eval th}
-\end{align*}
+[v].X &= [v].bold(I) U \
+&= bold(B) bold(I) ([v].U) && "def of abstractions" \
+&= ([x].bold(B) bold(I) x)([v].U) && "eval th" \
+&= ([x].x)([v].U) && bold(I)"-axiom" \
+&= [v].U = [v].Y && "eval th"
 $$
 
-> [!info] $\mathbf{B}$-axioms
+> [!info] $bold(B)$-axioms
 >
-> 1.  ${\tiny \mathbf{C}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{B})(\mathbf{B}(\mathbf{B}\mathbf{C})(\mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{B})\mathbf{I})))\mathbf{I}))))\mathbf{I} = \mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{C}\mathbf{I})))(\mathbf{C}(\mathbf{B}\mathbf{B}\mathbf{I})\mathbf{I})} \quad \textit{i.e.} \quad [x, V, Z].\mathbf{C}(\mathbf{C}(\mathbf{B}\mathbf{B}x)V)Z = [x, V, Z].\mathbf{C}x(VZ)$
-> 2.  ${\tiny \mathbf{C}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{B})(\mathbf{B}(\mathbf{B}\mathbf{C})(\mathbf{B}(\mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{B}\mathbf{I})))\mathbf{I}))))\mathbf{I} = \mathbf{B}(\mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{B}\mathbf{I})))(\mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{C}\mathbf{I}))\mathbf{I})} \quad \textit{i.e.} \quad [x, U, Z].\mathbf{C}(\mathbf{B}(\mathbf{B}U)x)Z = [x, U, Z].\mathbf{B}U(\mathbf{C}xZ)$
-> 3.  ${\tiny \mathbf{B}(\mathbf{C}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{B})(\mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{B}\mathbf{I}))\mathbf{I}))))\mathbf{I} = \mathbf{B}(\mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{B}\mathbf{I})))(\mathbf{B}(\mathbf{C}(\mathbf{B}\mathbf{B}\mathbf{I}))\mathbf{I})} \quad \textit{i.e.} \quad [x, U, V].\mathbf{B}(\mathbf{B}UV)x = [x, U, V].\mathbf{B}U(\mathbf{B}Vx)$
+> 1.  $script(bold(C) (bold(B) bold(C) (bold(B) (bold(B) bold(B) )(bold(B) (bold(B) bold(C) )(bold(C) (bold(B) bold(B) (bold(B) bold(C) (bold(B) (bold(B) bold(B) )bold(I) )))bold(I) ))))bold(I)  = bold(C) (bold(B) bold(B) (bold(B) bold(B) (bold(B) bold(C) bold(I) )))(bold(C) (bold(B) bold(B) bold(I) )bold(I) )) quad \ italic(i.e.) quad [x, V, Z].bold(C) (bold(C) (bold(B) bold(B) x)V)Z = [x, V, Z].bold(C) x(V Z)$
+> 2.  $script(bold(C) (bold(B) bold(C) (bold(B) (bold(B) bold(B) )(bold(B) (bold(B) bold(C) )(bold(B) (bold(C) (bold(B) bold(B) (bold(B) bold(B) bold(I) )))bold(I) ))))bold(I)  = bold(B) (bold(C) (bold(B) bold(B) (bold(B) bold(B) bold(I) )))(bold(C) (bold(B) bold(B) (bold(B) bold(C) bold(I) ))bold(I) )) quad \ italic(i.e.) quad [x, U, Z].bold(C) (bold(B) (bold(B) U)x)Z = [x, U, Z].bold(B) U(bold(C) x Z)$
+> 3.  $script(bold(B) (bold(C) (bold(B) bold(C) (bold(B) (bold(B) bold(B) )(bold(C) (bold(B) bold(B) (bold(B) bold(B) bold(I) ))bold(I) ))))bold(I)  = bold(B) (bold(C) (bold(B) bold(B) (bold(B) bold(B) bold(I) )))(bold(B) (bold(C) (bold(B) bold(B) bold(I) ))bold(I) )) quad \ italic(i.e.) quad [x, U, V].bold(B) (bold(B) U V)x = [x, U, V].bold(B) U(bold(B) V x)$
 
 Why ?
-Here, we have $X = Y$ with $X = \mathbf{B}UVZ$ and $Y = U(VZ)$. We want to show that $[v].X=[v].Y$. Let's detail the first case, where $v \in FV(U)$ and $v \notin FV(V)$ nor $v \notin FV(Z)$.
+Here, we have $X = Y$ with $X = bold(B) U V Z$ and $Y = U(V Z)$. We want to show that $[v].X=[v].Y$. Let's detail the first case, where $v in "FV"(U)$ and $v in.not "FV"(V)$ nor $v in.not "FV"(Z)$.
 
 $$
-\begin{align*}
-[v].X &= [v].\mathbf{B}UVZ \\
-&= \mathbf{C}([v].\mathbf{B}UV)Z && \text{abstraction def (denoted by ad later on)} \\
-&= \mathbf{C}(\mathbf{C}([v].\mathbf{B}U)V)Z && \text{ad} \\
-&= \mathbf{C}(\mathbf{C}(\mathbf{B}\mathbf{B}([v].U))V)Z && \text{ad} \\
-&= ([x, y, t]. \mathbf{C}(\mathbf{C}(\mathbf{B}\mathbf{B}x)y)t)([v].U)VZ && \text{eval th} \\
-&= ([x, y, t].\mathbf{C}x(yt))([v].U)VZ && \mathbf{B} \text{-axiom 1} \\
-&= \mathbf{C}([v].U)(VZ) && \text{eval th} \\
-&= [v].U(VZ) = [v].Y && \text{ad}
-\end{align*}
+[v].X &= [v].bold(B) U V Z \
+&= bold(C) ([v].bold(B) U V)Z && "abstraction def (denoted by ad later on)" \
+&= bold(C) (bold(C) ([v].bold(B) U)V)Z && "ad" \
+&= bold(C) (bold(C) (bold(B) bold(B) ([v].U))V)Z && "ad" \
+&= ([x, y, t]. bold(C) (bold(C) (bold(B) bold(B) x)y)t)([v].U)V Z && "eval th" \
+&= ([x, y, t].bold(C) x(y t))([v].U)V Z && bold(B)"-axiom 1" \
+&= bold(C) ([v].U)(V Z) && "eval th" \
+&= [v].U(V Z) = [v].Y && "ad"
 $$
 
 Similar reasonings can be made to find the other axioms.
 
-> [!info] $\mathbf{C}$-axioms
+> [!info] $bold(C) $-axioms
 >
-> 1. ${\tiny \mathbf{C}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{B})(\mathbf{B}(\mathbf{B}\mathbf{C})(\mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{C})\mathbf{I})))\mathbf{I}))))\mathbf{I} = \mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{C})(\mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{C}\mathbf{I}))\mathbf{I}))))\mathbf{I}} \quad \textit{i.e.} \quad [x, V, Z].\mathbf{C}(\mathbf{C}(\mathbf{B}\mathbf{C}x)V)Z = [x, V, Z].\mathbf{C}(\mathbf{C}xZ)V$
-> 2. ${\tiny \mathbf{C}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{B})(\mathbf{B}(\mathbf{B}\mathbf{C})(\mathbf{B}(\mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{C}\mathbf{I})))\mathbf{I}))))\mathbf{I} = \mathbf{B}(\mathbf{C}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{B})(\mathbf{C}(\mathbf{B}\mathbf{B}\mathbf{I})\mathbf{I}))))\mathbf{I}} \quad \textit{i.e.} \quad [x, U, Z].\mathbf{C}(\mathbf{B}(\mathbf{C}U)x)Z = [x, U, Z].\mathbf{B}(UZ)x$
-> 3. ${\tiny \mathbf{B}(\mathbf{C}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{B})(\mathbf{C}(\mathbf{B}\mathbf{B}(\mathbf{B}\mathbf{C}\mathbf{I}))\mathbf{I}))))\mathbf{I} = \mathbf{C}(\mathbf{B}\mathbf{C}(\mathbf{B}(\mathbf{B}\mathbf{B})(\mathbf{B}(\mathbf{B}\mathbf{C})(\mathbf{B}(\mathbf{C}(\mathbf{B}\mathbf{B}\mathbf{I}))\mathbf{I}))))\mathbf{I}} \quad \textit{i.e.} \quad [x, U, V].\mathbf{B}(\mathbf{C}UV)x = [x, U, V].C(\mathbf{B}Ux)V$
+> 1. $script( bold(C) (bold(B) bold(C) (bold(B) (bold(B) bold(B) )(bold(B) (bold(B) bold(C) )(bold(C) (bold(B) bold(B) (bold(B) bold(C) (bold(B) (bold(B) bold(C) )bold(I) )))bold(I) ))))bold(I)  = bold(C) (bold(B) bold(B) (bold(B) bold(C) (bold(B) (bold(B) bold(C) )(bold(C) (bold(B) bold(B) (bold(B) bold(C) bold(I) ))bold(I) ))))bold(I) ) quad \ italic(i.e.) quad [x, V, Z].bold(C) (bold(C) (bold(B) bold(C) x)V)Z = [x, V, Z].bold(C) (bold(C) x Z)V$
+> 2. $script( bold(C) (bold(B) bold(C) (bold(B) (bold(B) bold(B) )(bold(B) (bold(B) bold(C) )(bold(B) (bold(C) (bold(B) bold(B) (bold(B) bold(C) bold(I) )))bold(I) ))))bold(I)  = bold(B) (bold(C) (bold(B) bold(C) (bold(B) (bold(B) bold(B) )(bold(C) (bold(B) bold(B) bold(I) )bold(I) ))))bold(I) ) quad \ italic(i.e.) quad [x, U, Z].bold(C) (bold(B) (bold(C) U)x)Z = [x, U, Z].bold(B) (U Z)x$
+> 3. $script( bold(B) (bold(C) (bold(B) bold(C) (bold(B) (bold(B) bold(B) )(bold(C) (bold(B) bold(B) (bold(B) bold(C) bold(I) ))bold(I) ))))bold(I)  = bold(C) (bold(B) bold(C) (bold(B) (bold(B) bold(B) )(bold(B) (bold(B) bold(C) )(bold(B) (bold(C) (bold(B) bold(B) bold(I) ))bold(I) ))))bold(I) ) quad \ italic(i.e.) quad [x, U, V].bold(B) (bold(C) U V)x = [x, U, V].C(bold(B) U x)V$
 
 Similar reasonings to the one above.
 
-> [!info] $\eta$-axiom
+> [!info] $eta$-axiom
 >
-> - $\mathbf{C}(\mathbf{B}\mathbf{B}\mathbf{I})\mathbf{I} = \mathbf{I} \quad \textit{i.e.} \quad [u, x].ux=\mathbf{I}$
+> - $bold(C) (bold(B) bold(B) bold(I) )bold(I) = bold(I) quad \ italic(i.e.) quad [u, x].u x=bold(I) $
 
 Justification :
 
-- $\eta$-rule : for all terms $U$, $[x].Ux=U$
+- $eta$-rule : for all terms $U$, $[x].U x=U$
 - as specified above, the rule is an axiom-scheme representing an infinite number of axioms
-- let's close it, our closed $\eta$-rule is $[u, x].ux=[u].u$
-- $[u].u=\mathbf{I}$
-- $[u, x].ux = [u].\mathbf{B}u\mathbf{I} = \mathbf{C}(\mathbf{B}\mathbf{B}\mathbf{I})\mathbf{I}$
+- let's close it, our closed $eta$-rule is $[u, x].u x=[u].u$
+- $[u].u=bold(I) $
+- $[u, x].u x = [u].bold(B) u bold(I) = bold(C) (bold(B) bold(B) bold(I) )bold(I) $
 
-> [!example] Example : deriving $\mathbf{B}\mathbf{I}=\mathbf{I}$ from $(\mathbf{I}+\eta)$-axioms
+> [!example] Example : deriving $bold(B) bold(I) =bold(I) $ from $(bold(I) +eta)$-axioms
 >
 > $$
-> \begin{align*}
-> \mathbf{C}(\mathbf{B}\mathbf{B}\mathbf{I})\mathbf{I}(\mathbf{B}\mathbf{I}) &= \mathbf{I}(\mathbf{B}\mathbf{I}) && \text{using } \eta\text{-axiom} \\
-> &= \mathbf{B}\mathbf{I} && \text{on one hand} \\
-> &= \mathbf{B}\mathbf{B}\mathbf{I}(\mathbf{B}\mathbf{I})\mathbf{I} && \text{on the other hand, applying } \mathbf{C} \\
-> &= \mathbf{B} (\mathbf{I}(\mathbf{B}\mathbf{I}))\mathbf{I} && \text{applying } \mathbf{B} \\
-> &= \mathbf{B}(\mathbf{B}\mathbf{I})\mathbf{I} && \text{applying } \mathbf{I} \\
-> &= \mathbf{I} && \text{using } \mathbf{I}\text{-axiom} \\
-> \text{Thus } \mathbf{B}\mathbf{I} &= \mathbf{I}
-> \end{align*}
+> bold(C) (bold(B) bold(B) bold(I) )bold(I) (bold(B) bold(I) ) &= bold(I) (bold(B) bold(I) ) && "using" eta"-axiom" \
+> &= bold(B) bold(I)  && "on one hand" \
+> &= bold(B) bold(B) bold(I) (bold(B) bold(I) )bold(I)  && "on the other hand, applying" bold(C)  \
+> &= bold(B)  (bold(I) (bold(B) bold(I) ))bold(I)  && "applying" bold(B)  \
+> &= bold(B) (bold(B) bold(I) )bold(I)  && "applying" bold(I)  \
+> &= bold(I)  && "using" bold(I)"-axiom" \
+> "Thus" bold(B) bold(I)  &= bold(I)
 > $$
