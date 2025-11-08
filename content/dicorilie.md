@@ -53,6 +53,7 @@ Qui sert encore plus à Sofia visiblement.
 |         y          |                    why                    |
 |        wdym        |             what do you mean              |
 |        wfh         |              work from home               |
+|        wlog        |        without loss of generality         |
 |        wrt         |              with respect to              |
 |        wtf         |               what the fuck               |
 |        wth         |               what the hell               |
