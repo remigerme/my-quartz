@@ -15,6 +15,7 @@ Qui sert encore plus à Sofia visiblement.
 |        fml         |     fuck my life (_vdm en français_)      |
 |        ftfy        |            fixed that for you             |
 |        fwiw        |            for what it's worth            |
+|         gg         |                 good game                 |
 |         gl         |                 good luck                 |
 |         gn         |                good night                 |
 |         hf         |                 have fun                  |
@@ -33,6 +34,7 @@ Qui sert encore plus à Sofia visiblement.
 |        ngl         |               not gonna lie               |
 |        mia         |             missing in action             |
 |         np         |                no problem                 |
+|         nt         |                 nice try                  |
 |        nvm         |                 nevermind                 |
 |        ofc         |                 of course                 |
 |        omg         |                 oh my god                 |
