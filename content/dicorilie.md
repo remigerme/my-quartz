@@ -12,6 +12,7 @@ Qui sert encore plus à Sofia visiblement.
 | bradaframanadamada |        brother from another mother        |
 |        btw         |                by the way                 |
 |         dw         |                don't worry                |
+|        eta         |         estimated time of arrival         |
 |        fml         |     fuck my life (_vdm en français_)      |
 |        ftfy        |            fixed that for you             |
 |        fwiw        |            for what it's worth            |
@@ -43,6 +44,7 @@ Qui sert encore plus à Sofia visiblement.
 |        otoh        |             on the other hand             |
 |       pebcak       | problem exists between chair and keyboard |
 |        rip         |               rest in peace               |
+|         rn         |                 right now                 |
 |        rtfm        |          read the fuckin' manual          |
 |       (n)sfw       |            (not) safe for work            |
 |        stfu        |             shut the fuck up              |
